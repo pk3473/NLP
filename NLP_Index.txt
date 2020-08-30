@@ -1,0 +1,217 @@
+==============================================================================================================================
+Text Data Augmentation Techniques:
+
+Data Augmentation Increases the Number of Data points similar to Computer Vision
+
+- Concatenation of Pos_tags to the word
+==============================================================================================================================
+
+- Method to open a link in the internet using Markdown cell
+- Different encodings for different languages ASCII (English), Latin (West Europe), big5 (Chinese) etc.
+- Need to convert any format into standard uniform format (utf8)
+
+==============================================================================================================================
+
+Sequence of Jupyter Notebooks for Reference
+
+1. NLP_Regex_Exp_Index
+
+2. NLP_Text_Preprocessing_Index
+
+3. NLP_Text_Preprocessing_SpaCy_Index
+
+4. NLP_SpaCy
+
+5. NLP_NER_Nlt_Index
+
+6. NLP_NER_SpaCy_Index
+
+7. NLP_Text_Data_Augmentation
+
+8. NLP_Feature_Engineering_Notes
+
+   Text Classification Models
+	
+	- Count Vector, TFIDF Representations of Text
+	- Word Embeddings in Action - Word2Vec
+
+9. NLP_Functions_Index
+
+10. NLP_Topic_Modelling_Index
+
+
+Note: The above topics helps for data preparation and feature extraction
+
+_____________________________________________________________________________________________________________________________
+
+10. NLP_Deep_Learning_Notes
+
+	- Architecture and Code is available LSTM
+	- Code is available Text Generation (predicting the words after specific text)
+
+11. NLP_Recurrent_Neural_Networks_Notes
+
+
+
+
+
+
+
+
+==============================================================================================================================
+Projects:
+
+1. Social_Media_Information_Extraction
+
+Goal: Company has asked to analyse their product tweets or they want to analyse Email or 
+Marketing Campaign and asked to extract some relevant insights or information from the data.
+
+
+Reading Dataframe ==> Creating and applying a clean function ==> Keyword Analysis ==> Top Mentions ==> Top Hashtag ==>
+Top URLS ==> Extracting Bigrams ==> Extracting Named Entity Recognition ==> Sentiment Analysis for some sententences ==>
+Topic Modelling
+
+Keyword Analysis = Fetching Top 100 Repetitive words
+Top Mentions = Fetching Top 100 Personalities (tagged with @)
+Sentiment Analysis = Extracting Sentiment using TextBlob("tex").sentiment
+
+Note: Refer the Jupyter Notebook for various Applications
+
+_____________________________________________________________________________________________________________________________
+
+2. Categorization of Sports Articles
+
+Goal: Implementation of Topic Modeling which can be used for document categorization.
+Task: Need to segregate 450 BBC Articles into homogenous articles
+
+Reading all the txt files ==> Data Exploration & Pre-processing ==> Function to pick top 30 words ==> 
+Visual display top 30 words ==> Categorization using Topic Model with LSA ==> LSA Step1: Creation of document term matrix ==>
+==> Creation of Tfidfvectorizer ==> Applying Truncated Singular Value Decomposition (SVD) ==> Getting the Topic numbers for
+each category
+
+______________________________________________________________________________________________________________________________
+
+3. SMS Spam Classification
+
+Reading a csv dataset ==> _clean function (lower, punc/stopwords removal, lemma) ==> Meta features (word count, char_count,
+num_dig) ==> NLP Features (POS Tag - Noun/Verb) ==> Count Vectorizer ==> tfidf ==> converting tfidf into dataframe ==> 
+Combining meta/NLP based features using horizontal stacking ==> Different variations of tfidf (ngram, char, etc.) ==> 
+Train - Test Split ==> Applying Classification Models (Naive Bayes, Logistic Regression, SVM, Ensemble) ===> Spam classification
+using Deep Learning ==> Using pretrained model (word2vec --> "crawl-300d-2M.vec") ==> embedding index ==> word embedding index
+dict ==> Convert the text data into word embeddings ==> Step1 (Converting data into tokens) ==> Step 2 (Converting text into
+sequence of tokens and padd them) ==> Training the model ==> CNN Classifier 
+
+
+______________________________________________________________________________________________________________________________
+
+4. https://datahack.analyticsvidhya.com/contest/hate-speech-classification/register ==> Hate Speech Classification
+
+______________________________________________________________________________________________________________________________
+
+5. Automatic-Tagging System (Multiclassification problem)
+
+
+Automatic_Tagging_using_ML
+
+Importing Libraries ==> Concatenated Title + Body as Text ==> Text Cleaning (Removal of HTML tags & URL Links, everything 
+except alphabets, extra or white spaces) ==> Applying Function (lower, stopwords) ==> Conversion of Target Variable into hot 
+encoded format (fitting multibinarizer to target, each column will be created an unique tag) ==> Feature Extraction from Train-
+Test to learn relationship b/n variables (tf_idf) ==> Train-Test Split ==> Model Building (Logistic Regression using 
+OneVsRestClassifier to train 100 different models at a time) (Nicely compared the actual results with predicted results in the
+notebook) ==> Performance evaluation with F1 score handling imbalance ==>  inferences
+
+
+Automatic_Tagging_using_DL
+
+Importing Libraries ==> Concatenated Title + Body as Text ==> Text Cleaning (Removal of HTML tags & URL Links, everything 
+except alphabets, extra or white spaces) ==> Applying Function (lower, stopwords) ==> Encode Text (X Variable) to Numbers 
+using Tokenizer ==> Checking unique word count = Vocab_size ==> conversion of texts_to_sequence ==> finding the right maximum
+length of sequence for padding ==> pad_seq ==> Reshaping Target variable (fitting multibinarizer to target variable, each 
+column will be created an unique tag) ==> Train-Test Split ==> Model Building (
+
+importing models --> layers --> callbacks (Early Checking/Model Checkpoint) --> Initiating a CNN model --> Compile --> Summary
+--> prediction and performance evaluation --> inference
+
+In the notes, there is a clear distinction between Binary Vs Multi-class Vs Multi-label classification
+
+For 100 Unique tags, 100 different models is applicable only Multi-Label Classification
+
+________________________________________________________________________________________________________________________________
+
+6. Categorization of Websites using LSTM/GRU
+
+Reading the dataset ==> Preprocessing (Text Cleaning - lower_case, removal of links/special characters, punctuations, numbers,
+{},(), short/stop words) ==> Label Encoding (using sklearn preprocessing) for Target Variable ==> Train-Test Split ==> Padding
+(calculating the length of the sentences, plotted histogram to see what is the max number of sentences - vimp for padding) ==>
+
+Preparing Tokenizer using keras (1. vocabulary creation --> Refers to all the unique words in the entire dataset and assign index to every 
+unique word ==> 2. Converting the word sequence to integer sequence using word index ==> 3. Append zero upto the maximum length of sequence 
+so that all the sequences are of same length- padding) ==> Converting Target variable into to_categorical ==> Diff between 
+Sequential (one model in same layer) Vs Functional API (Multip models in same layer) - Additional info - Keras embedding,
+Dropout, Recurrent Dropout ==> Model Building
+
+LSTM Model ==> Summary ==> Callbacks ==> Early Stopping ==> Model Checkpoint ==> Fitting ==> GRU Model ==> Comparison of 
+LSTM/GRU with Classification Report
+
+
+Note: Such a wonderful notebook with nice explanation
+
+_______________________________________________________________________________________________________________________________
+
+7. Machine Translation - Spanish to English
+
+
+
+==============================================================================================================================
+
+Text Classification Projects Steps
+
+Step 1: Dataset Preparation: i) Text Cleaning (Removal of Stopwords/Punctuations/Symbols, Normalization etc), 
+			     ii) Target Label Encoding
+			     iii) Train-test Split	
+
+Step 2: Feature Extraction:  i) Count Features
+			    ii) TF IDF Features
+ 			    iii) Word Embedding Features
+			    iv) Meta Features
+			    v) Topic Models as features
+
+
+Step 3: Classification Models: i) Rule Based - Hand Crafted Rules
+			       ii) Probability Based - Naive Bayes 
+			       iii) Learning Based - Logistics Regression/SVM/Ensemble Models
+			       iv) Deep Learning Based - CNN/RNN/Hybrid Deep Neural Networks
+
+
+==============================================================================================================================
+
+Jose_Portilla NLP
+
+Project 1: Iris_classification_using DL
+
+Loading Iris dataset ==> Creation of X & y variables ==> One Coding (using to_categorical) ==> Train-Test split ==> Minmax 
+scaling ==> Model Building ( model initiation with sequential ==> Adding hidden layers and neurons with dense for input 
+and output ==> compile ==> Model Summary ==> predictions ==> comparing y_test and predictions using confusion matrxi ==>
+checking the classification report ==> saving the model as h5 ==> loading to a new model for predictions
+
+Note: This notebook has nicely shown how y_test and y_predicted (with accuracy of 0.98) is compared...
+
+
+Project 2: Text_Generation with LSTMS
+
+Reading the txt file ==> Coversion of txt doc into Tokens using Spacy ==> text_sequence ==> importing keras tokenizer ==> 
+applying tokenizer to convert into texts_to_sequences ==> creating index_word, word_counts, Vocab_size ==> conv sequence
+into array (X variable) ==> converting into categorical variables (y-variable) ==> Model Building (
+Sequential --> Embedding Layer --> LSTM --> Dense Layer --> Compile --> Summmary --> Train-Test Split --> Training the model -->
+fitting model --> saving the model --> opening the tokenizer --> Padding the sequences --> Generating Text Function -->
+
+
+
+
+
+
+
+
+
+
+

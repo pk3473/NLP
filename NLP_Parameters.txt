@@ -1,0 +1,10 @@
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
+
+https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html
+
+https://code.google.com/archive/p/word2vec/
+
+https://radimrehurek.com/gensim/index.html
+
+
+
